@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <description name="OpenMRS ODA Plugin" url="http://finbrein.github.com/openmrs-contrib_birt_oda_plugin/update">
+      A simple ODA plugin that takes a URL for an openmrs instance and prompts the user for a dataset definition and cohort definition.
+   </description>
+   <feature url="features/org.eclipse.birt.report.data.oda.openmrs_0.5.0.jar" id="org.eclipse.birt.report.data.oda.openmrs" version="0.5.0" os="linux,macosx,win32">
+      <category name="ODA_Plugin"/>
+   </feature>
+   <category-def name="ODA_Plugin" label="OpenMRS ODA Plugin Features"/>
+</site>
