@@ -1,26 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="org.eclipse.birt.report.data.oda.openmrs"
+      id="org.eclipse.birt.report.data.oda.openmrs.ui"
       label="OpenMRS ODA UI Feature"
       version="0.5.0"
       provider-name="OpenMRS"
-      plugin="org.eclipse.birt.report.data.oda.openmrs"
+      plugin="org.eclipse.birt.report.data.oda.openmrs.ui"
       os="linux,macosx,win32">
 
    <description url="http://finbrein.github.com/openmrs-contrib_birt_oda_plugin/">
-      [A simple ODA plugin that takes a URL for an openmrs instance and prompts the user for a dataset definition and cohort definition.]
+      A simple ODA plugin that takes a URL for an openmrs instance
+and prompts the user for a dataset definition and cohort definition.
    </description>
 
    <copyright url="https://wiki.openmrs.org/display/RES/OpenMRS+Public+License+1.1">
-      [The contents of this file are subject to the OpenMRS Public License Version 1.0 (the &quot;License&quot;); you may not use this file except in compliance with the License. You may obtain a copy of the License at http://license.openmrs.org
-
-Software distributed under the License is distributed on an &quot;AS IS&quot; basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License for the specific language governing rights and limitations under the License.
-
-Copyright (C) OpenMRS, LLC. All Rights Reserved.]
+      The contents of this file are subject to the OpenMRS Public
+License Version 1.0 (the &quot;License&quot;); you may not use this file
+except in compliance with the License. You may obtain a copy
+of the License at http://license.openmrs.org
+Software distributed under the License is distributed on an &quot;AS
+IS&quot; basis, WITHOUT WARRANTY OF ANY KIND, either express or implied.
+See the License for the specific language governing rights and
+limitations under the License.
+Copyright (C) OpenMRS, LLC. All Rights Reserved.
    </copyright>
 
    <license url="https://wiki.openmrs.org/display/RES/Plain+Text+License">
-      [OpenMRS Public License
+      OpenMRS Public License
                                 Version 1.0
 
                               ---------------
@@ -531,7 +536,7 @@ EXHIBIT A OpenMRS Public License.
      [NOTE: The text of this Exhibit A may differ slightly from the text of
      the notices in the Source Code files of the Original Code. You should
      use the text of this Exhibit A rather than the text found in the
-     Original Code Source Code for Your Modifications.]
+     Original Code Source Code for Your Modifications.
    </license>
 
    <url>

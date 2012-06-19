@@ -42,8 +42,8 @@
       <dataSourceUI
             id="%oda.data.source.id">
          <newDataSourceWizard
-               pageClass="org.eclipse.datatools.connectivity.oda.design.ui.pages.impl.DefaultDataSourceWizardPage"
                includesProgressMonitor="false"
+               pageClass="org.eclipse.birt.report.data.oda.openmrs.ui.wizards.XMLSelectionWizardPage"
                pageTitle="%wizard.data.source.page.title"
                windowTitle="%wizard.window.title">
          </newDataSourceWizard>
@@ -60,7 +60,7 @@
          <dataSetPage
                displayName="%wizard.data.set.page.title"
                icon="icons/datasetpage.ico"
-               wizardPageClass="org.eclipse.birt.report.data.oda.openmrs.ui.CustomDataSetWizardPage"
+               wizardPageClass="org.eclipse.birt.report.data.oda.openmrs.ui.wizards.XmlDataSetSelectionPage"
                path="/"
                id="org.eclipse.birt.report.data.oda.openmrs.dataSet.page1">
          </dataSetPage>

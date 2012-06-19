@@ -6,18 +6,19 @@
          id="%oda.data.source.id"
          point="org.eclipse.datatools.connectivity.oda.dataSource">
       <dataSource
-            driverClass="org.eclipse.birt.report.data.oda.openmrs.Driver"
+            driverClass="org.eclipse.birt.report.data.oda.openmrs.impl.Driver"
             defaultDisplayName="%data.source.name"
             setThreadContextClassLoader="false"
             odaVersion="3.2"
             id="%oda.data.source.id">
          <properties>
             <property
-                  name="property1"
                   allowsEmptyValueAsNull="true"
-                  defaultDisplayName="Property 1"
-                  type="string"
-                  isEncryptable="false">
+                  canInherit="true"
+                  defaultDisplayName="OpenMRS Default Display Name"
+                  isEncryptable="false"
+                  name="property1"
+                  type="string">
             </property>
          </properties>
       </dataSource>

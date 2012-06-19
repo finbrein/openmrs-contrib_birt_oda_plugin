@@ -240,7 +240,7 @@ public class CustomDataSetWizardPage extends DataSetWizardPage
             /* Note: You may need to manually update your ODA runtime extension's
              * plug-in manifest to export its package for visibility here.
              */
-            IDriver customDriver = new org.eclipse.birt.report.data.oda.openmrs.Driver();
+            IDriver customDriver = new org.eclipse.birt.report.data.oda.openmrs.impl.Driver();
             
             // obtain and open a live connection
             customConn = customDriver.getConnection( null );
