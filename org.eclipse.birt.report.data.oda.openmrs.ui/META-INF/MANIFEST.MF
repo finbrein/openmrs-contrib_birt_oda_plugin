@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %plugin.name
 Bundle-SymbolicName: org.eclipse.birt.report.data.oda.openmrs.ui; singleton:=true
-Bundle-Version: 0.5.0
+Bundle-Version: 1.0.0
 Bundle-Activator: org.eclipse.birt.report.data.oda.openmrs.ui.UiPlugin
 Bundle-Vendor: OpenMRS
 Bundle-Localization: plugin
@@ -10,7 +10,8 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  org.eclipse.datatools.connectivity.oda.design.ui;bundle-version="[3.2.0,4.0.0)",
  org.eclipse.birt.report.data.oda.openmrs
-Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6,
+ JavaSE-1.7
 Bundle-ActivationPolicy: lazy
 Export-Package: org.eclipse.birt.report.data.oda.openmrs.ui,
  org.eclipse.birt.report.data.oda.openmrs.ui.control,
