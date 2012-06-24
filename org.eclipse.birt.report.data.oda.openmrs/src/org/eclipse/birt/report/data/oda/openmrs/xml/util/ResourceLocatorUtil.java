@@ -17,9 +17,14 @@ import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.Authenticator;
+import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
+import java.net.PasswordAuthentication;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.net.URL;
+import java.net.URLConnection;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -46,7 +51,11 @@ public class ResourceLocatorUtil
 		
 		try
 		{
-			return new BufferedInputStream( uri.toURL( ).openStream( ));
+			URL urlRequest = new URL(uri.toString());
+			HttpURLConnection conn = (HttpURLConnection) urlRequest.openConnection();
+		    conn.setRequestProperty("Accept", "text/xml");
+		    InputStream stream = conn.getInputStream();			
+			return new BufferedInputStream(stream);
 		}
 		catch ( MalformedURLException e )
 		{
@@ -112,7 +121,7 @@ public class ResourceLocatorUtil
 	{
 		if ( path == null || path.trim( ).length( ) <= 0 )
 			return ""; //$NON-NLS-1$
-		
+
 		String location = path;
 		if ( !new File( path ).isAbsolute( ) )
 		{
@@ -125,13 +134,13 @@ public class ResourceLocatorUtil
 				try
 				{
 					URI uri = new URI( null, null, path.replace( '\\', '/' ), null );
-					location = uri.getPath( );
+					location = uri.getPath( ); 
 				}
 				catch ( URISyntaxException e1 )
 				{
 				}
 			}
 		}
-		return location;
+		return location; 
 	}
 }

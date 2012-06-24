@@ -24,7 +24,7 @@ import java.util.logging.Logger;
 
 import org.eclipse.birt.report.data.oda.openmrs.impl.DataTypes;
 import org.eclipse.birt.report.data.oda.openmrs.ui.UiPlugin;
-import org.eclipse.birt.report.data.oda.openmrs.xml.i18n.Messages;
+import org.eclipse.birt.report.data.oda.openmrs.ui.i18n.Messages;
 import org.eclipse.birt.report.data.oda.openmrs.ui.preference.DataSetPreferencePage;
 import org.eclipse.birt.report.data.oda.openmrs.ui.utils.ExceptionHandler;
 import org.eclipse.birt.report.data.oda.openmrs.ui.utils.IHelpConstants;
@@ -120,7 +120,7 @@ public class ColumnMappingPage extends DataSetWizardPage
 	private static String DEFAULT_PAGE_NAME = Messages.getString( "xPathChoosePage.messages.xmlColumnMapping" );   //$NON-NLS-1$
 	private static String DEFAULT_PAGE_Message = Messages.getString( "wizard.title.defineColumnMapping" );         //$NON-NLS-1$
 	private static String PATH_SEPERATOR = "/"; //$NON-NLS-1$
-	private static String ATTRIBUTE_MARK = "@"; //$NON-NLS-1$
+	private static String ATTRIBUTE_MARK = "@"; //$NON-NLS-1$ 
 	
 	private static String[] dataTypeDisplayNames = new String[]{
 			Messages.getString( "datatypes.dateTime" ),  //$NON-NLS-1$

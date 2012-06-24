@@ -17,7 +17,7 @@ import java.util.Map;
 
 import org.eclipse.datatools.connectivity.oda.OdaException;
 import org.eclipse.birt.report.data.oda.openmrs.impl.DataTypes;
-import org.eclipse.birt.report.data.oda.openmrs.xml.i18n.Messages;
+import org.eclipse.birt.report.data.oda.openmrs.ui.i18n.Messages;
 import org.eclipse.birt.report.data.oda.openmrs.xml.util.RelationInformation;
 import org.eclipse.jface.viewers.TableViewer;
 import org.eclipse.swt.SWT;

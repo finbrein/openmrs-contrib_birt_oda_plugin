@@ -24,7 +24,7 @@ import org.eclipse.datatools.connectivity.oda.IResultSetMetaData;
 import org.eclipse.datatools.connectivity.oda.OdaException;
 import org.eclipse.datatools.connectivity.oda.design.ResourceIdentifiers;
 import org.eclipse.datatools.connectivity.oda.design.ui.designsession.DesignSessionUtil;
-import org.eclipse.birt.report.data.oda.openmrs.xml.i18n.Messages;
+import org.eclipse.birt.report.data.oda.openmrs.ui.i18n.Messages;
 import org.eclipse.birt.report.data.oda.openmrs.ui.utils.ExceptionHandler;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.swt.SWT;

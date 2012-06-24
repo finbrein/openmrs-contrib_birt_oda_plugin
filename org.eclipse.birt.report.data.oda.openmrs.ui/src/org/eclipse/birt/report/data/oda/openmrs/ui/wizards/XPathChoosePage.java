@@ -105,11 +105,10 @@ public class XPathChoosePage extends DataSetWizardPage
 		
 		if( XMLInformationHolder.hasDestroyed() )
 			XMLInformationHolder.start( this.getInitializationDesign( ) );
-		initializeControl( );
-		populateXMLTree( );
+		initializeControl();
+		populateXMLTree();
 		
-		XMLRelationInfoUtil.setSystemHelp( getControl( ),
-				IHelpConstants.CONEXT_ID_DATASET_XML_XPATH );
+		XMLRelationInfoUtil.setSystemHelp( getControl( ), IHelpConstants.CONEXT_ID_DATASET_XML_XPATH );
 	}
 	
 	/**

@@ -135,8 +135,7 @@ public class XMLInformationHolder
 					EMPTY_STRING );
 			setPropertyValue( Constants.CONST_PROP_SCHEMA_FILELIST, schema );
 
-			String xmlFile = dataSourceProp.getProperty( Constants.CONST_PROP_FILELIST,
-					EMPTY_STRING );
+			String xmlFile = dataSourceProp.getProperty( Constants.CONST_PROP_FILELIST, EMPTY_STRING );
 			setPropertyValue( Constants.CONST_PROP_FILELIST, xmlFile );
 
 			String xmlEncoding = dataSourceProp.getProperty( Constants.CONST_PROP_ENCODINGLIST,

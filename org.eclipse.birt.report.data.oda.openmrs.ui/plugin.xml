@@ -1,31 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?eclipse version="3.4"?>
 <plugin>
-
    <extension
          point="org.eclipse.datatools.connectivity.connectionProfile">
       <newWizard
             name="%newwizard.name"
-            icon="icons/new_oda_dswiz.ico"
+            icon="icons/fieldlist.ico"
             profile="%oda.data.source.id"
             description="%newwizard.description"
             class="org.eclipse.datatools.connectivity.oda.design.ui.wizards.NewDataSourceWizard"
-            id="%oda.data.source.id">
-      </newWizard>
-   </extension>
-   <extension
-         point="org.eclipse.datatools.connectivity.ui.connectionProfileImage">
-      <profileImage
-            icon="icons/profile.gif"
-            profileID="%oda.data.source.id">
-      </profileImage>
+            id="%oda.data.source.id"/>
    </extension>
    <extension
          point="org.eclipse.ui.propertyPages">
       <page
+            id="%oda.data.source.id"
             name="%profile.propertypage.name"
-            class="org.eclipse.datatools.connectivity.oda.design.ui.pages.impl.DefaultDataSourcePropertyPage"
-            id="%oda.data.source.id">
+            class="org.eclipse.birt.report.data.oda.openmrs.ui.wizards.XMLPropertyPage">
          <enabledWhen>
             <instanceof
                   value="org.eclipse.datatools.connectivity.IConnectionProfile">
@@ -33,38 +24,50 @@
          </enabledWhen>
          <filter
                name="org.eclipse.datatools.profile.property.id"
-               value="%oda.data.source.id">
-         </filter>
+               value="%oda.data.source.id"/>
       </page>
-   </extension>
+   </extension>   
    <extension
          point="org.eclipse.datatools.connectivity.oda.design.ui.dataSource">
-      <dataSourceUI
-            id="%oda.data.source.id">
+      <dataSourceUI id="%oda.data.source.id">
          <newDataSourceWizard
                includesProgressMonitor="false"
                pageClass="org.eclipse.birt.report.data.oda.openmrs.ui.wizards.XMLSelectionWizardPage"
                pageTitle="%wizard.data.source.page.title"
-               windowTitle="%wizard.window.title">
-         </newDataSourceWizard>
+               windowTitle="%wizard.window.title"/>
       </dataSourceUI>
       <dataSetUI
-            supportsOutParameters="false"
+            id="org.eclipse.birt.report.data.oda.openmrs.dataSet"
+            initialPageId="org.eclipse.datatools.connectivity.oda.xml.ui.dataset.ui1"
             supportsInParameters="true"
-            initialPageId="org.eclipse.birt.report.data.oda.openmrs.dataSet.page1"
-            id="org.eclipse.birt.report.data.oda.openmrs.dataSet">
-         <dataSetWizard
-               class="org.eclipse.datatools.connectivity.oda.design.ui.wizards.DataSetWizard"
-               windowTitle="%wizard.data.set.window.title">
-         </dataSetWizard>
-         <dataSetPage
-               displayName="%wizard.data.set.page.title"
-               icon="icons/datasetpage.ico"
-               wizardPageClass="org.eclipse.birt.report.data.oda.openmrs.ui.wizards.XmlDataSetSelectionPage"
-               path="/"
-               id="org.eclipse.birt.report.data.oda.openmrs.dataSet.page1">
-         </dataSetPage>
-      </dataSetUI>
+            supportsOutParameters="false">
+            <dataSetWizard 
+                  class="org.eclipse.datatools.connectivity.oda.design.ui.wizards.DataSetWizard" 
+                  windowTitle="%wizard.data.set.window.title" />
+            <dataSetPage
+                  id="org.eclipse.birt.report.data.oda.openmrs.ui.dataset.ui1"
+                  wizardPageClass="org.eclipse.birt.report.data.oda.openmrs.ui.wizards.XmlDataSetSelectionPage"
+                  path="/"
+                  displayName="%oda.xml.dataset"/>
+            <dataSetPage
+                  id="org.eclipse.birt.report.data.oda.openmrs.ui.dataset.ui2"
+                  wizardPageClass="org.eclipse.birt.report.data.oda.openmrs.ui.wizards.XPathChoosePage"
+                  path="/"
+                  displayName="%oda.xml.tablemapping"/>
+            <dataSetPage
+                  id="org.eclipse.birt.report.data.oda.openmrs.ui.dataset.ui3"
+                  wizardPageClass="org.eclipse.birt.report.data.oda.openmrs.ui.wizards.ColumnMappingPage"
+                  path="/"
+                  displayName="%oda.xml.columnmapping"/>     
+               
+       </dataSetUI>
    </extension>
-
+      <extension
+         point="org.eclipse.ui.preferencePages">
+         <page
+            class="org.eclipse.birt.report.data.oda.openmrs.ui.preference.DataSetPreferencePage"
+            category="org.eclipse.datatools.connectivity.oda.design.ui.preferences.OpenDataAccessPage"
+            name="%preference.datasetpreview"
+            id="org.eclipse.birt.report.data.oda.openmrs.ui.preference.DataSetPreferencePage"/>
+   </extension>
 </plugin>

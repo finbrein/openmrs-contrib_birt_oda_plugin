@@ -55,8 +55,7 @@ public class SchemaPopulationUtil
 	public static Map getPrefixMapping( String xmlFileName, String xmlEncoding, Object resourceIdentifiers ) throws OdaException
 	{
 		IXMLSource xmlSource = new XMLSourceFromPath( xmlFileName, xmlEncoding, resourceIdentifiers );
-		SaxParser sp = new SaxParser( xmlSource, 
-				new ISaxParserConsumer( )
+		SaxParser sp = new SaxParser( xmlSource, new ISaxParserConsumer( )
 		{
 			public void endElement( XMLPath path )
 			{

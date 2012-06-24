@@ -36,8 +36,7 @@ public final class DataTypes
 	public static final int BIGDECIMAL = Types.NUMERIC; 
 	public static final int BOOLEAN = Types.BOOLEAN;
 	
-	private static final String XML_DATA_SOURCE_ID = 
-	        "org.eclipse.datatools.enablement.oda.xml"; //$NON-NLS-1$
+	private static final String XML_DATA_SOURCE_ID = "org.eclipse.birt.report.data.oda.openmrs"; //$NON-NLS-1$
 
 	/**
 	 * Return the int which stands for the type specified by input argument
@@ -61,8 +60,7 @@ public final class DataTypes
 	      if( typeMapping != null )
 	           return typeMapping.getNativeTypeCode();
 
-	      throw new OdaException( Messages
-	                .getString( "dataTypes.typeNameInvalid" ) + typeName ); //$NON-NLS-1$
+	      throw new OdaException( Messages.getString( "dataTypes.typeNameInvalid" ) + typeName ); //$NON-NLS-1$
 	}
 	
 	/**
@@ -77,13 +75,11 @@ public final class DataTypes
 	public static String getTypeString( int type ) throws OdaException
 	{
 		 // get the data type definition from my plugin manifest for all other types
-	     DataTypeMapping typeMapping = getManifest().getDataSetType( null )
-	                                        .getDataTypeMapping( type );
+	     DataTypeMapping typeMapping = getManifest().getDataSetType( null ).getDataTypeMapping( type ); 
 	        if( typeMapping != null )
 	            return typeMapping.getNativeType();
 
-	        throw new OdaException( Messages
-	                .getString( "dataTypes.typeNameInvalid" ) + type ); //$NON-NLS-1$
+	        throw new OdaException( Messages.getString( "dataTypes.typeNameInvalid" ) + type ); //$NON-NLS-1$
 	}
 	/**
 	 * Evalute whether an input String is a valid type that is supported by flat
@@ -100,8 +96,7 @@ public final class DataTypes
         DataTypeMapping typeMapping = null;
         try
         {
-            typeMapping = getManifest().getDataSetType( null )
-                                            .getDataTypeMapping( preparedTypeName );
+            typeMapping = getManifest().getDataSetType( null ).getDataTypeMapping( preparedTypeName );
         }
         catch( OdaException e )
         {
@@ -118,8 +113,7 @@ public final class DataTypes
     private static ExtensionManifest getManifest()
         throws OdaException
     {
-        return ManifestExplorer.getInstance()
-                .getExtensionManifest( XML_DATA_SOURCE_ID );
+        return ManifestExplorer.getInstance().getExtensionManifest( XML_DATA_SOURCE_ID );
     }
     
 	private DataTypes( )

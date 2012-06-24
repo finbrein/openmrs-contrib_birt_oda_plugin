@@ -91,8 +91,7 @@ public class RelationInformation
 			String tableRawRoot = t.getRowPath( );
 			if ( useNamespace )
 				tableRawRoot = getValueWithNameSpace( tableRawRoot, prefixMap );
-			TableInfo tableInfo = new TableInfo( tableName,
-					tableRawRoot );
+			TableInfo tableInfo = new TableInfo( tableName, tableRawRoot );
 			
 			for ( int j = 0; j < t.getColumns( ).length; j++ )
 			{

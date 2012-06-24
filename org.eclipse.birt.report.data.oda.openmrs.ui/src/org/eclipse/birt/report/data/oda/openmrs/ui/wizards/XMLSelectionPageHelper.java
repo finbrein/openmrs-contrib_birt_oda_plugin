@@ -67,8 +67,7 @@ public class XMLSelectionPageHelper
 	private transient Composite parent = null;
 	private transient org.eclipse.datatools.connectivity.oda.util.ResourceIdentifiers ri = null;
 
-    static final String DEFAULT_MESSAGE = 
-        Messages.getString( "wizard.defaultMessage.selectFolder" ); //$NON-NLS-1$
+    static final String DEFAULT_MESSAGE = Messages.getString( "wizard.defaultMessage.selectFolder" ); //$NON-NLS-1$
 
     private static final String EMPTY_STRING = ""; //$NON-NLS-1$
     private final String[] XML_FILTER = new String[]{"*.xml", "*.*"} ;  //$NON-NLS-1$ //$NON-NLS-2$
@@ -120,8 +119,7 @@ public class XMLSelectionPageHelper
 		label2.setLayoutData( data );
 		setupEncodingControl( composite );
 		
-		XMLRelationInfoUtil.setSystemHelp( getControl(),
-				IHelpConstants.CONEXT_ID_DATASOURCE_XML );
+		XMLRelationInfoUtil.setSystemHelp( getControl(), IHelpConstants.CONEXT_ID_DATASOURCE_XML );
     }
     
     String getFolderLocation()
@@ -153,10 +151,8 @@ public class XMLSelectionPageHelper
             props = new Properties();
         
         // set custom driver specific properties
-		props.setProperty( Constants.CONST_PROP_FILELIST,
-				getFolderLocation( ) );
-		props.setProperty( Constants.CONST_PROP_SCHEMA_FILELIST,
-				getSchemaFileLocation( ) );
+		props.setProperty( Constants.CONST_PROP_FILELIST, getFolderLocation( ) );
+		props.setProperty( Constants.CONST_PROP_SCHEMA_FILELIST, getSchemaFileLocation( ) );
 		props.setProperty( Constants.CONST_PROP_ENCODINGLIST, getEncoding( ) );
 		return props;
     }

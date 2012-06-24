@@ -14,7 +14,7 @@ package org.eclipse.birt.report.data.oda.openmrs.ui.wizards;
 import java.util.HashMap;
 
 import org.eclipse.birt.report.data.oda.openmrs.impl.DataTypes;
-import org.eclipse.birt.report.data.oda.openmrs.xml.i18n.Messages;
+import org.eclipse.birt.report.data.oda.openmrs.ui.i18n.Messages;
 
 /**
  *	This class is used to make transformation between data type display name and 

@@ -1,91 +1,123 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?eclipse version="3.4"?>
 <plugin>
-
    <extension
          id="%oda.data.source.id"
          point="org.eclipse.datatools.connectivity.oda.dataSource">
+      <dataSet
+            defaultDisplayName="%dataset.name"
+            id="org.eclipse.birt.report.data.oda.openmrs.dataSet">
+         <properties>
+         <propertyGroup
+               defaultDisplayName="Dataset Properties"
+               name="dateset properties">
+            <property
+                  type="string"
+                  defaultDisplayName="max row"
+                  canInherit="true"
+                  name="MAX_ROW"/>           
+            <property
+                  type="string"
+                  defaultDisplayName="xml file"
+                  canInherit="true"
+                  name="XML_FILE"/>
+            <property
+                  type="string"
+                  defaultDisplayName="xml encoding"
+                  canInherit="true"
+                  name="XML_ENCODING"/> 
+         </propertyGroup>
+         <propertyVisibility name="queryText" visibility="hide"/>
+         <propertyVisibility name="MAX_ROW" visibility="hide"/>
+         <propertyVisibility name="XML_FILE" visibility="hide"/>
+         <propertyVisibility name="XML_ENCODING" visibility="hide"/>
+         </properties>
+            <dataTypeMapping
+                  nativeDataType="INT"
+                  nativeDataTypeCode="4"
+                  odaScalarDataType="Integer"/>
+            <dataTypeMapping
+                  nativeDataType="DOUBLE"
+                  nativeDataTypeCode="8"
+                  odaScalarDataType="Double"/>
+            <dataTypeMapping
+                  nativeDataType="STRING"
+                  nativeDataTypeCode="12"
+                  odaScalarDataType="String"/>
+            <dataTypeMapping
+                  nativeDataType="DATE"
+                  nativeDataTypeCode="91"
+                  odaScalarDataType="Date"/>
+            <dataTypeMapping
+                  nativeDataType="TIME"
+                  nativeDataTypeCode="92"
+                  odaScalarDataType="Time"/>
+            <dataTypeMapping
+                  nativeDataType="TIMESTAMP"
+                  nativeDataTypeCode="93"
+                  odaScalarDataType="Timestamp"/>
+            <dataTypeMapping
+                  nativeDataType="BLOB"
+                  nativeDataTypeCode="2004"
+                  odaScalarDataType="String"/>
+            <dataTypeMapping
+                  nativeDataType="CLOB"
+                  nativeDataTypeCode="2005"
+                  odaScalarDataType="String"/>
+            <dataTypeMapping
+                  nativeDataType="BIGDECIMAL"
+                  nativeDataTypeCode="2"
+                  odaScalarDataType="Decimal"/>
+           <dataTypeMapping nativeDataType="BOOLEAN"
+                  nativeDataTypeCode="16"
+                  odaScalarDataType="Boolean"/>
+      </dataSet>
       <dataSource
             driverClass="org.eclipse.birt.report.data.oda.openmrs.impl.Driver"
-            defaultDisplayName="%data.source.name"
+            defaultDisplayName="%datasource.name"
             setThreadContextClassLoader="false"
             odaVersion="3.2"
             id="%oda.data.source.id">
          <properties>
+         <propertyGroup
+               defaultDisplayName="Connection Properties"
+               name="connectionProperties">
             <property
-                  allowsEmptyValueAsNull="true"
+                  type="string"
+                  defaultDisplayName="%datasource.property.xmlFile"
                   canInherit="true"
-                  defaultDisplayName="OpenMRS Default Display Name"
-                  isEncryptable="false"
-                  name="property1"
-                  type="string">
-            </property>
+                  name="FILELIST"/>
+            <property
+                  type="string"
+                  defaultDisplayName="%datasource.property.xmlEncoding"
+                  canInherit="true"
+                  name="ENCODINGLIST"/>
+            <property
+                  type="string"
+                  defaultDisplayName="%datasource.property.schemaFile"
+                  canInherit="true"
+                  name="SCHEMAFILELIST"/>          
+         </propertyGroup>
          </properties>
       </dataSource>
-      <dataSet
-            defaultDisplayName="%data.set.name"
-            id="org.eclipse.birt.report.data.oda.openmrs.dataSet">
-         <dataTypeMapping
-               nativeDataTypeCode="1"
-               odaScalarDataType="String"
-               nativeDataType="String">
-         </dataTypeMapping>
-         <dataTypeMapping
-               nativeDataTypeCode="4"
-               odaScalarDataType="Integer"
-               nativeDataType="Integer">
-         </dataTypeMapping>
-         <dataTypeMapping
-               nativeDataTypeCode="8"
-               odaScalarDataType="Double"
-               nativeDataType="Double">
-         </dataTypeMapping>
-         <dataTypeMapping
-               nativeDataTypeCode="3"
-               odaScalarDataType="Decimal"
-               nativeDataType="BigDecimal">
-         </dataTypeMapping>
-         <dataTypeMapping
-               nativeDataTypeCode="91"
-               odaScalarDataType="Date"
-               nativeDataType="Date">
-         </dataTypeMapping>
-         <dataTypeMapping
-               nativeDataTypeCode="92"
-               odaScalarDataType="Time"
-               nativeDataType="Time">
-         </dataTypeMapping>
-         <dataTypeMapping
-               nativeDataTypeCode="93"
-               odaScalarDataType="Timestamp"
-               nativeDataType="Timestamp">
-         </dataTypeMapping>
-         <dataTypeMapping
-               nativeDataTypeCode="16"
-               odaScalarDataType="Boolean"
-               nativeDataType="Boolean">
-         </dataTypeMapping>
-      </dataSet>
    </extension>
+   
    <extension
          point="org.eclipse.datatools.connectivity.connectionProfile">
       <category
-            name="%data.source.name"
-            parentCategory="org.eclipse.datatools.connectivity.oda.profileCategory"
-            id="%oda.data.source.id">
-      </category>
+            name="%oda.data.source.category.name"
+            parentCategory="%oda.parent.category.id"
+            id="%oda.data.source.id"/>
       <connectionProfile
             pingFactory="org.eclipse.datatools.connectivity.oda.profile.OdaConnectionFactory"
             name="%connection.profile.name"
             category="%oda.data.source.id"
-            id="%oda.data.source.id">
-      </connectionProfile>
+            id="%oda.data.source.id"/>
       <connectionFactory
-            name="ODA Connection Factory"
+            name="%oda.connection.factory.name"
             profile="%oda.data.source.id"
             class="org.eclipse.datatools.connectivity.oda.profile.OdaConnectionFactory"
             id="org.eclipse.datatools.connectivity.oda.IConnection">
       </connectionFactory>
    </extension>
-
 </plugin>
