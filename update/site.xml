@@ -3,10 +3,10 @@
    <description name="OpenMRS ODA Driver Plugin" url="http://finbrein.github.com/openmrs-contrib_birt_oda_plugin/update">
       A simple ODA plugin that takes a URL for an openmrs instance and prompts the user for a dataset definition and cohort definition.
    </description>
-   <feature url="features/org.eclipse.birt.report.data.oda.openmrs.ui_1.0.0.jar" id="org.eclipse.birt.report.data.oda.openmrs.ui" version="1.0.0" os="linux,macosx,win32">
-      <category name="OpenMRS ODA Driver Plugin"/>
+   <feature url="features/org.eclipse.birt.report.data.oda.openmrs.ui_1.0.0.1.jar" id="org.eclipse.birt.report.data.oda.openmrs.ui" version="1.0.0.1" os="linux,macosx,win32">
+      <category name="OpenMRS ODA Driver"/>
    </feature>
-   <category-def name="OpenMRS ODA Driver Plugin" label="OpenMRS ODA Driver Plugin Feature">
+   <category-def name="OpenMRS ODA Driver" label="OpenMRS ODA Driver">
       <description>
          This category includes all of the OpenMRS ODA Driver plugin features.
       </description>
