@@ -32,7 +32,7 @@
       <dataSourceUI id="%oda.data.source.id">
          <newDataSourceWizard
                includesProgressMonitor="false"
-               pageClass="org.eclipse.birt.report.data.oda.openmrs.ui.wizards.XMLSelectionWizardPage"
+               pageClass="org.eclipse.birt.report.data.oda.openmrs.ui.wizards.CustomDataSourceWizardPage"
                pageTitle="%wizard.data.source.page.title"
                windowTitle="%wizard.window.title"/>
       </dataSourceUI>

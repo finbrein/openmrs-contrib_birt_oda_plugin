@@ -7,20 +7,25 @@
 
 package org.eclipse.birt.report.data.oda.openmrs.impl;
 
+import java.io.IOException;
 import java.io.InputStream;
+import java.net.Authenticator;
+import java.net.HttpURLConnection;
+import java.net.PasswordAuthentication;
+import java.net.URL;
 import java.util.Map;
 import java.util.Properties;
 
-import org.eclipse.datatools.connectivity.oda.IConnection;
-import org.eclipse.datatools.connectivity.oda.IDataSetMetaData;
-import org.eclipse.datatools.connectivity.oda.IQuery;
-import org.eclipse.datatools.connectivity.oda.OdaException;
-import org.eclipse.datatools.connectivity.oda.util.ResourceIdentifiers;
 import org.eclipse.birt.report.data.oda.openmrs.xml.Constants;
 import org.eclipse.birt.report.data.oda.openmrs.xml.i18n.Messages;
 import org.eclipse.birt.report.data.oda.openmrs.xml.util.IXMLSource;
 import org.eclipse.birt.report.data.oda.openmrs.xml.util.XMLSourceFromInputStream;
 import org.eclipse.birt.report.data.oda.openmrs.xml.util.XMLSourceFromPath;
+import org.eclipse.datatools.connectivity.oda.IConnection;
+import org.eclipse.datatools.connectivity.oda.IDataSetMetaData;
+import org.eclipse.datatools.connectivity.oda.IQuery;
+import org.eclipse.datatools.connectivity.oda.OdaException;
+import org.eclipse.datatools.connectivity.oda.util.ResourceIdentifiers;
 
 import com.ibm.icu.util.ULocale;
 
@@ -33,6 +38,8 @@ public class Connection implements IConnection
     private static final String TRUE_LITERAL = "true";	//$NON-NLS-1$
 
     private IXMLSource xmlSource;
+    
+    private String path, user, pass;
 
 	//The boolean indicate whether the connection is open.
 	private boolean isOpen;
@@ -48,9 +55,6 @@ public class Connection implements IConnection
 	 */
 	public void open( Properties connProperties ) throws OdaException
 	{
-        // TODO replace with data source specific implementation
-	    //m_isOpen = true;  
-	    
 		if( isOpen == true )
 		{
 			return;
@@ -58,7 +62,36 @@ public class Connection implements IConnection
 		this.connProperties = connProperties;
 		
 		isOpen = true;
+		
+		// Set global path, domain, username, and password
+        path = connProperties.getProperty( Constants.CONST_PROP_FILELIST );
+        user = connProperties.getProperty( Constants.CONST_PROP_USERNAME );
+        pass = connProperties.getProperty( Constants.CONST_PROP_PASSWORD );
+        String domain = "http://localhost:8086/openmrs";
+        try {
+			getAuthenticated(path, domain, user, pass);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
  	}
+	
+	private static void getAuthenticated(final String urlStr, final String domain, final String userName, final String password) throws IOException 
+	{
+
+	    /*StringBuilder response = new StringBuilder();*/
+
+		Authenticator.setDefault(new Authenticator() {
+	        @Override
+	        public PasswordAuthentication getPasswordAuthentication() {
+	        	return new PasswordAuthentication(userName, password.toCharArray());
+	        }
+	    });
+		
+		URL urlRequest = new URL(urlStr);
+		HttpURLConnection conn = (HttpURLConnection) urlRequest.openConnection();
+	    conn.setRequestProperty("Accept", "text/xml");		
+	}
 
 	/*
 	 * @see org.eclipse.datatools.connectivity.oda.IConnection#setAppContext(java.lang.Object)
@@ -100,8 +133,6 @@ public class Connection implements IConnection
 	 */
 	public void close() throws OdaException
 	{
-        // TODO replace with data source specific implementation
-	    //m_isOpen = false;
 		
 		isOpen = false;
 		if ( xmlSource != null )
@@ -116,8 +147,6 @@ public class Connection implements IConnection
 	 */
 	public boolean isOpen() throws OdaException
 	{
-        // TODO Auto-generated method stub
-		//return m_isOpen;
 		return isOpen;
 	}
 
@@ -128,7 +157,6 @@ public class Connection implements IConnection
 	{
 	    // assumes that this driver supports only one type of data set,
         // ignores the specified dataSetType
-		//return new DataSetMetaData( this );
 		return new DataSetMetaData( this );
 	}
 
@@ -139,7 +167,6 @@ public class Connection implements IConnection
 	{
         // assumes that this driver supports only one type of data set,
         // ignores the specified dataSetType
-		//return new Query();
 		return new Query( this );
 	}
 

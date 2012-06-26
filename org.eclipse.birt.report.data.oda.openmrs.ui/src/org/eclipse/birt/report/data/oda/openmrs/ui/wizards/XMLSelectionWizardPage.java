@@ -10,26 +10,11 @@
  *******************************************************************************/
 package org.eclipse.birt.report.data.oda.openmrs.ui.wizards;
 
-import java.net.Authenticator;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.PasswordAuthentication;
-import java.net.ProtocolException;
-import java.net.URL;
 import java.util.Properties;
-
 
 import org.eclipse.datatools.connectivity.IConnectionProfile;
 import org.eclipse.datatools.connectivity.oda.design.ui.wizards.DataSourceWizardPage;
-
 import org.eclipse.swt.widgets.Composite;
-
-
-import java.io.IOException;
-import java.net.Authenticator;
-import java.net.PasswordAuthentication;
-import java.util.List;
-import java.util.Map;
 
 /**
  * xml selection page

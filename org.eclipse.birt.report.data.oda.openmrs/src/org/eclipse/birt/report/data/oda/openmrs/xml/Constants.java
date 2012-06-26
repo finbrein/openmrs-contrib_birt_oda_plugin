@@ -42,6 +42,8 @@ public class Constants{
 	//The connection property that gives the file name(s).Currently we only
 	//support single file.
 	public static final String CONST_PROP_FILELIST = "FILELIST"; //$NON-NLS-1$
+	public static final String CONST_PROP_USERNAME = "username"; //$NON-NLS-1$
+	public static final String CONST_PROP_PASSWORD = "password"; //$NON-NLS-1$
 	public static final String CONST_PROP_ENCODINGLIST = "ENCODINGLIST";//$NON-NLS-1$
 	public static final String CONST_PROP_SCHEMA_FILELIST="SCHEMAFILELIST";
 	

@@ -30,6 +30,7 @@ import java.util.logging.Logger;
 
 import org.eclipse.datatools.connectivity.oda.OdaException;
 import org.eclipse.datatools.connectivity.oda.util.ResourceIdentifiers;
+import org.eclipse.birt.report.data.oda.openmrs.impl.Connection;
 import org.eclipse.birt.report.data.oda.openmrs.xml.i18n.Messages;
 
 
@@ -51,6 +52,8 @@ public class ResourceLocatorUtil
 		
 		try
 		{
+			
+			
 			URL urlRequest = new URL(uri.toString());
 			HttpURLConnection conn = (HttpURLConnection) urlRequest.openConnection();
 		    conn.setRequestProperty("Accept", "text/xml");

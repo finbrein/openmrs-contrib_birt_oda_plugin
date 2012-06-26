@@ -2,7 +2,7 @@
 <feature
       id="org.eclipse.birt.report.data.oda.openmrs.ui"
       label="OpenMRS ODA UI Feature"
-      version="1.0.0.1"
+      version="1.0.0.2"
       provider-name="OpenMRS"
       plugin="org.eclipse.birt.report.data.oda.openmrs.ui"
       os="linux,macosx,win32">
