@@ -3,51 +3,135 @@
    <description name="OpenMRS Common Plugins" url="http://finbrein.github.com/openmrs-contrib_birt_oda_plugin/update/common_plugins">
       Common plugins for developers of Openmrs.
    </description>
-   <feature url="features/egit/org.eclipse.egit.core_2.0.0.201206130900-r.jar"/>
-  
-   <feature url="features/egit/org.eclipse.egit.doc_2.0.0.201206130900-r.jar"/>
-   <feature url="features/egit/org.eclipse.egit.ui_2.0.0.201206130900-r.jar"/>
-   <feature url="features/egit/org.eclipse.egit_2.0.0.201206130900-r.jar"/>
-   <feature url="features/egit/org.eclipse.jgit_2.0.0.201206130900-r.jar"/>
    
    <feature url="features/maven/ch.qos.logback.classic_0.9.27.v20110224-1110.jar"/>
+		<category name="Maven Integration for Eclipse"/>
+   </feature>
    <feature url="features/maven/ch.qos.logback.core_0.9.27.v20110224-1110.jar"/>
+		<category name="Maven Integration for Eclipse"/>
+   </feature>
    <feature url="features/maven/ch.qos.logback.slf4j_0.9.27.v20110224-1110.jar"/>
+		<category name="Maven Integration for Eclipse"/>
+   </feature>
    <feature url="features/maven/com.ning.async-http-client_1.6.3.201112281337.jar"/>
+		<category name="Maven Integration for Eclipse"/>
+   </feature>
    <feature url="features/maven/org.eclipse.m2e.core.ui_1.0.200.20111228-1245.jar"/>
+		<category name="Maven Integration for Eclipse"/>
+   </feature>
    <feature url="features/maven/org.eclipse.m2e.core_1.0.200.20111228-1245.jar"/>
+		<category name="Maven Integration for Eclipse"/>
+   </feature>
    <feature url="features/maven/org.eclipse.m2e.discovery_1.0.200.20111228-1245.jar"/> 
+		<category name="Maven Integration for Eclipse"/>
+   </feature>
    <feature url="features/maven/org.eclipse.m2e.editor.xml_1.0.200.20111228-1245.jar"/>
+		<category name="Maven Integration for Eclipse"/>
+   </feature>
    <feature url="features/maven/org.eclipse.m2e.editor_1.0.200.20111228-1245.jar"/>
+		<category name="Maven Integration for Eclipse"/>
+   </feature>
    <feature url="features/maven/org.eclipse.m2e.jdt_1.0.200.20111228-1245.jar"/>
+		<category name="Maven Integration for Eclipse"/>
+   </feature>
    <feature url="features/maven/org.eclipse.m2e.launching_1.0.200.20111228-1245.jar"/>
+		<category name="Maven Integration for Eclipse"/>
+   </feature>
    <feature url="features/maven/org.eclipse.m2e.logback.appender_1.0.200.20111228-1245.jar"/>
+		<category name="Maven Integration for Eclipse"/>
+   </feature>
    <feature url="features/maven/org.eclipse.m2e.logback.configuration_1.0.200.20111228-1245.jar"/>
-   <feature url="features/maven/org.eclipse.m2e.model.edit_1.0.200.20111228-1245.jar"/>    
+		<category name="Maven Integration for Eclipse"/>
+   </feature>
+   <feature url="features/maven/org.eclipse.m2e.model.edit_1.0.200.20111228-1245.jar"/>
+		<category name="Maven Integration for Eclipse"/>
+   </feature>
    <feature url="features/maven/org.eclipse.m2e.refactoring_1.0.200.20111228-1245.jar"/>
+		<category name="Maven Integration for Eclipse"/>
+   </feature>
    <feature url="features/maven/org.eclipse.m2e.scm_1.0.200.20111228-1245.jar"/>
+		<category name="Maven Integration for Eclipse"/>
+   </feature>
    <feature url="features/maven/org.eclipse.m2e.usagedata_1.0.200.20111228-1245.jar"/>
+		<category name="Maven Integration for Eclipse"/>
+   </feature>
    <feature url="features/maven/org.jboss.netty_3.2.4.Final-201112281337.jar"/>
-   <feature url="features/maven/org.slf4j.api_1.6.1.v20100831-0715.jar"/> 
+		<category name="Maven Integration for Eclipse"/>
+   </feature>
+   <feature url="features/maven/org.slf4j.api_1.6.1.v20100831-0715.jar"/>
+		<category name="Maven Integration for Eclipse"/>
+   </feature> 
+
+   <feature url="features/egit/org.eclipse.egit.core_2.0.0.201206130900-r.jar">
+		<category name="EGit - Git Team Provider"/>
+   </feature>  
+   <feature url="features/egit/org.eclipse.egit.doc_2.0.0.201206130900-r.jar"/>
+ 		<category name="EGit - Git Team Provider"/>
+   </feature>
+   <feature url="features/egit/org.eclipse.egit.ui_2.0.0.201206130900-r.jar"/>
+		<category name="EGit - Git Team Provider"/>
+   </feature>
+   <feature url="features/egit/org.eclipse.egit_2.0.0.201206130900-r.jar"/>
+		<category name="EGit - Git Team Provider"/>
+   </feature>
+   <feature url="features/egit/org.eclipse.jgit_2.0.0.201206130900-r.jar"/>
+		<category name="EGit - Git Team Provider"/>
+   </feature>
+
    
    <feature url="features/maven_scm_handler/org.sonatype.m2e.subversive_0.13.0.201106211115.jar"/> 
+		<category name="Maven SCM Handler"/>
+   </feature>
    
    <feature url="features/maven_scm_plugin/ch.qos.logback.classic_1.0.0.v20111214-2030.jar"/>
+		<category name="maven-scm-plugin"/>
+   </feature>
    <feature url="features/maven_scm_plugin/ch.qos.logback.core_1.0.0.v20111214-2030.jar"/> 
+		<category name="maven-scm-plugin"/>
+   </feature>
    <feature url="features/maven_scm_plugin/org.objectledge.maven.connectors.scm_1.0.0.201107091852.jar"/> 
-   <feature url="features/maven_scm_plugin/org.slf4j.api_1.6.4.v20120130-2120.jar"/>    
+ 		<category name="maven-scm-plugin"/>
+   </feature>  
+   <feature url="features/maven_scm_plugin/org.slf4j.api_1.6.4.v20120130-2120.jar"/> 
+		<category name="maven-scm-plugin"/>
+   </feature>   
    
    <feature url="features/svn/org.eclipse.team.svn.core.nl1_1.0.0.I20120601-1700.jar"/>
-   <feature url="features/svn/org.eclipse.team.svn.core_1.0.0.I20120601-1700.jar"/> 
+		<category name="Subversive-SVN team Provider"/>
+   </feature>
+   <feature url="features/svn/org.eclipse.team.svn.core_1.0.0.I20120601-1700.jar"/>
+		<category name="Subversive-SVN team Provider"/>
+   </feature> 
    <feature url="features/svn/org.eclipse.team.svn.help_1.0.0.I20120601-1700.jar"/> 
-   <feature url="features/svn/org.eclipse.team.svn.mylyn_1.0.0.I20120601-1700.jar"/> 
+		<category name="Subversive-SVN team Provider"/>
+   </feature>
+   <feature url="features/svn/org.eclipse.team.svn.mylyn_1.0.0.I20120601-1700.jar"/>
+		<category name="Subversive-SVN team Provider"/>
+   </feature>
    <feature url="features/svn/org.eclipse.team.svn.nl1_1.0.0.I20120601-1700.jar"/> 
+		<category name="Subversive-SVN team Provider"/>
+   </feature>
    <feature url="features/svn/org.eclipse.team.svn.resource.ignore.rules.jdt_1.0.0.I20120601-1700.jar"/> 
+		<category name="Subversive-SVN team Provider"/>
+   </feature>
    <feature url="features/svn/org.eclipse.team.svn.revision.graph_1.0.0.I20120601-1700.jar"/> 
+		<category name="Subversive-SVN team Provider"/>
+   </feature>
    <feature url="features/svn/org.eclipse.team.svn.ui.nl1_1.0.0.I20120601-1700.jar"/> 
+		<category name="Subversive-SVN team Provider"/>
+   </feature>
    <feature url="features/svn/org.eclipse.team.svn.ui_1.0.0.I20120601-1700.jar"/> 
-   <feature url="features/svn/org.eclipse.team.svn_1.0.0.I20120601-1700.jar"/>    
+		<category name="Subversive-SVN team Provider"/>
+   </feature>
+   <feature url="features/svn/org.eclipse.team.svn_1.0.0.I20120601-1700.jar"/>
+		<category name="Subversive-SVN team Provider"/>
+   </feature> 
    
    <feature url="features/svn_connectors/org.polarion.eclipse.team.svn.connector.svnkit16_3.0.0.I20120601-1700.jar"/> 
+		<category name="Subversive SVN Connectors"/>
+   </feature>
+   
    <feature url="features/svn_connectors/org.polarion.eclipse.team.svn.connector_3.0.0.I20120601-1700.jar"/> 
+		<category name="SVN Kit 1.3.7"/>
+   </feature>
 </site>
